@@ -1,0 +1,12 @@
+Private-Package:  \
+	playground.service.impl
+
+Import-Package: org.osgi.framework;version="1.3.0",\
+				org.amdatu.multitenant,\
+				org.amdatu.multitenant.adapter
+
+Bundle-Activator: org.amdatu.multitenant.adapter.MultiTenantBundleActivator
+X-MultiTenant-Version: 1
+X-MultiTenant-Bundle-Activator: playground.service.impl.Activator
+X-MultiTenant-Binding:TENANT
+X-MultiTenant-Scope: (|(org.amdatu.tenant.pid=%TENANTPID%)(!(org.amdatu.tenant.pid=*)))

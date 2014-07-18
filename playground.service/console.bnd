@@ -1,0 +1,3 @@
+Private-Package:  \
+	playground.service.console
+Bundle-Activator: playground.service.console.Activator

@@ -1,0 +1,28 @@
+-runfw: org.apache.felix.framework;version='[4,5)'
+-runee: JavaSE-1.7
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active
+
+-runbundles:  \
+	org.amdatu.multitenant;version=latest,\
+	org.amdatu.multitenant.adapter;version=latest,\
+	org.amdatu.multitenant.conf;version=latest,\
+	org.amdatu.multitenant.factory;version=latest,\
+	org.amdatu.multitenant.org.apache.felix.configadmin;version=latest,\
+	org.apache.felix.configadmin;version='[1.2.8,1.2.9)',\
+	org.apache.felix.dependencymanager;version='[3.1.0,3.1.1)',\
+	org.apache.felix.dependencymanager.shell;version='[3.0.1,3.0.2)',\
+	org.apache.felix.log;version='[1.0.1,1.0.2)',\
+	org.apache.felix.metatype;version='[1.0.6,1.0.7)',\
+	osgi.cmpn;version='[4.2.1,4.2.2)',\
+	org.apache.felix.gogo.command,\
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	playground.service.console;version=latest,\
+	playground.service.impl;version=latest,\
+	playground.service.service;version=latest
+	
+-runrequires:\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
