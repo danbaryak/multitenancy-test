@@ -29,6 +29,10 @@ public class Activator extends DependencyActivatorBase {
 
 		String tenantPid = configureTenant(context);
 
+		System.out.println("Tenant PID is " + tenantPid);
+//		ServiceReference ref = context.getServiceReference(TestService.class.getName(), String.format("(%1$s=%2$s)", Constants.PID_KEY, tenantPid));
+//		System.out.println("service reference is " + ref);
+		
 		Properties props = new Properties();
 		props.put(CommandProcessor.COMMAND_SCOPE, "test");
 		props.put(CommandProcessor.COMMAND_FUNCTION, new String[] { "getName",
@@ -38,8 +42,7 @@ public class Activator extends DependencyActivatorBase {
 				.setImplementation(TestConsole.class)
 				.add(createServiceDependency().setService(
 						TestService.class,
-						String.format("[%1$s] [%1$s]", Constants.PID_KEY,
-								tenantPid)).setRequired(true)));
+						String.format("(%1$s=%2$s)", Constants.PID_KEY, tenantPid)).setRequired(false)));
 
 	}
 
